@@ -1,0 +1,29 @@
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.bak
+
+# Node modules (if ever needed for tooling)
+node_modules/
+
+# PRPM build artifacts
+*.tgz
+*.tar.gz
+
+# Local test files
+test/
+testing/
+*.test.md
+
+# Research logs (local testing)
+.claude/research-logs/
