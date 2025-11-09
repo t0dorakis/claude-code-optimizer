@@ -1,6 +1,6 @@
 {
   "name": "claude-code-optimizer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Research Claude Code best practices, MCP patterns, performance optimization, context management, and agentic techniques. Features automated URL tracking, scoring methodology, and timestamped research reports.",
   "format": "claude",
   "subtype": "agent",
