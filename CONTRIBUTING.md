@@ -116,6 +116,5 @@ By contributing, you agree that your contributions will be licensed under MIT Li
 Contributors will be recognized in:
 - README.md acknowledgments section
 - Release notes
-- PRPM package metadata
 
 Thank you for helping improve Claude Code Optimizer!

@@ -6,32 +6,16 @@
   "subtype": "agent",
   "author": "t0dorakis",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/t0dorakis/claude-code-optimizer"
-  },
+  "repository": "https://github.com/t0dorakis/claude-code-optimizer",
   "files": [
-    "claude-code-optimizer.md",
-    "README.md",
-    "LICENSE"
+    "claude-code-optimizer.md"
   ],
   "tags": [
-    "claude-code",
-    "research",
-    "optimization",
-    "mcp",
+    "meta",
     "performance",
     "best-practices",
     "context-management",
-    "agentic-patterns"
-  ],
-  "keywords": [
-    "agent",
-    "research",
-    "best-practices",
-    "context-management",
-    "url-tracking",
-    "automated-reports"
-  ],
-  "categories": ["productivity", "research"]
+    "prompt-engineering",
+    "optimization"
+  ]
 }
