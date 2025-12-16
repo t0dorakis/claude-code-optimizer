@@ -13,7 +13,7 @@ Research Claude Code best practices, MCP patterns, performance optimization, con
 ## Installation
 
 ```bash
-prpm install claude-code-optimizer
+prpm install @t0dorakis/claude-code-optimizer
 ```
 
 ## Prerequisites
