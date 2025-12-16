@@ -4,11 +4,11 @@ Research Claude Code best practices, MCP patterns, performance optimization, con
 
 ## Features
 
-- **Systematic Research**: Searches official Anthropic docs, GitHub repos, Hacker News, Reddit, and community resources
-- **URL Tracking**: Maintains scored database of all research sources
-- **Automated Reports**: Generates timestamped research summaries with TL;DR, findings, and action items
-- **Performance Focus**: Specializes in context optimization, caching strategies, and MCP implementation patterns
-- **Best Practices**: Discovers and documents cutting-edge Claude Code techniques and agentic architectures
+- **Planning Step**: Pre-research planning via `/plan-claude-code-optimization` for scoped, efficient research
+- **Systematic Research**: Prioritizes changelog, HN, anthropic.com/engineering, and GitHub
+- **URL Tracking**: Scored database (1-10) of all research sources
+- **Automated Reports**: Timestamped summaries with TL;DR, findings, actions
+- **Thinking Modes**: `ultrathink` (complex), `think harder` (compare), `think` (quick)
 
 ## Installation
 
@@ -18,19 +18,23 @@ prpm install claude-code-optimizer
 
 ## Prerequisites
 
-The agent requires a research logs directory structure. Create it before first use:
+Create required directories before first use:
 
 ```bash
-# Create required directories
 mkdir -p .claude/research-logs/reports
-
-# Initialize URL tracking table (optional - agent will create if missing)
-touch .claude/research-logs/claude-code-sources.md
 ```
 
 ## Usage
 
-After installation, invoke the agent in Claude Code:
+### Recommended: Plan First
+
+```
+/plan-claude-code-optimization optimize context usage
+```
+
+Presents plan, asks confirmation, then invokes optimizer.
+
+### Direct Agent Call
 
 ```
 /agent claude-code-optimizer
@@ -38,108 +42,65 @@ After installation, invoke the agent in Claude Code:
 
 ### Example Prompts
 
-- "Research best practices for MCP server implementation"
-- "Find performance optimization techniques for Claude Code"
-- "Discover context management strategies for large codebases"
-- "Research agentic patterns and multi-agent architectures"
-- "Find official Anthropic guidance on prompt engineering"
+- "Research MCP server best practices"
+- "Find context management strategies"
+- "Compare agentic architectures"
+- "Check Claude Code changelog for recent changes"
 
 ## Directory Structure
-
-The agent maintains this structure:
 
 ```
 .claude/
 └── research-logs/
-    ├── claude-code-sources.md      # URL tracking table with scores
+    ├── claude-code-sources.md      # Scored URL database
     └── reports/
-        └── YYYY-MM-DD-HH-MM-SS.md  # Timestamped research reports
+        └── YYYY-MM-DD-HHMM-{topic}.md
 ```
 
-### URL Tracking Format
+### URL Scoring
 
-The `claude-code-sources.md` file tracks all research sources:
-
-```markdown
-| URL | Date | Score | Category | Key Insights |
-|-----|------|-------|----------|--------------|
-| https://... | 2024-01-15 | 9/10 | Official Docs | MCP implementation guide |
-```
+**9-10:** Official docs | **7-8:** Quality tutorial | **5-6:** Useful discussion | **1-4:** Limited value
 
 ### Report Format
 
-Each timestamped report includes:
-- **TL;DR**: Executive summary (3-5 bullet points)
-- **Detailed Findings**: Comprehensive research results
-- **Sources**: Referenced URLs with context
-- **Action Items**: Recommended next steps
+```markdown
+# {topic} | {timestamp}
+
+## TL;DR
+{1-2 sentences, actionable}
+
+## Findings
+- **{Category}:** {Finding} [[score] source]
+
+## Actions
+- Now: {immediate}
+- Later: {strategic}
+
+## Sources
+Top: [9] url | [8] url
+```
 
 ## Configuration
 
-### Model Selection
+### Model
 
-The agent uses Sonnet 4.5 by default. To use a different model, modify the agent prompt directly.
+Uses **Opus** by default for deep research quality.
 
-### Research Scope
+### Priority Sources
 
-The agent prioritizes sources in this order:
-1. Official Anthropic documentation & changelog
-2. Hacker News discussions
-3. GitHub repositories & issues
-4. Reddit communities (r/ClaudeAI, r/LocalLLaMA)
-5. Technical blogs & forums
+1. Claude Code changelog/releases
+2. Hacker News ("Claude Code" OR "Anthropic")
+3. anthropic.com/engineering
+4. GitHub anthropics/claude-code
 
-## Examples
+### MCP Integration
 
-### Research MCP Patterns
-```
-User: Research MCP server best practices
-Agent: *Searches official docs, GitHub examples*
-       *Creates scored URL table*
-       *Generates comprehensive report with implementation patterns*
-```
-
-### Performance Optimization
-```
-User: How to optimize context usage in Claude Code?
-Agent: *Researches context management strategies*
-       *Documents caching techniques*
-       *Provides actionable optimization checklist*
-```
+Uses Context7 for framework documentation lookup.
 
 ## Contributing
 
-Contributions welcome! See [CONTRIBUTING.md](https://github.com/t0dorakis/claude-code-optimizer/blob/main/CONTRIBUTING.md) for guidelines.
-
-### Development
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-### Reporting Issues
-
-Found a bug or have a feature request? [Open an issue](https://github.com/t0dorakis/claude-code-optimizer/issues).
+[CONTRIBUTING.md](https://github.com/t0dorakis/claude-code-optimizer/blob/main/CONTRIBUTING.md) | [Open Issue](https://github.com/t0dorakis/claude-code-optimizer/issues)
 
 ## License
 
-MIT - See [LICENSE](LICENSE) file for details.
-
-## Author
-
-Created by [t0dorakis](https://github.com/t0dorakis)
-
-## Acknowledgments
-
-- Anthropic for Claude Code platform
-- PRPM maintainers for package management
-- Community contributors for research insights
-
-## Version History
-
-- **1.0.0** - Initial release with core research features
-
----
-
-For more information about Claude Code agents, visit the [official documentation](https://docs.claude.com/en/docs/claude-code).
+MIT - [t0dorakis](https://github.com/t0dorakis)
