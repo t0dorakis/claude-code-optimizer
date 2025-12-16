@@ -1,15 +1,12 @@
 {
   "name": "claude-code-optimizer",
-  "version": "1.0.1",
-  "description": "Research Claude Code best practices, MCP patterns, performance optimization, context management, and agentic techniques. Features automated URL tracking, scoring methodology, and timestamped research reports.",
-  "format": "claude",
-  "subtype": "agent",
+  "version": "1.0.3",
   "author": "t0dorakis",
   "license": "MIT",
   "repository": "https://github.com/t0dorakis/claude-code-optimizer",
-  "files": [
-    "claude-code-optimizer.md"
-  ],
+  "description": "Research Claude Code best practices, MCP patterns, performance optimization, context management, and agentic techniques. Features automated URL tracking, scoring methodology, and timestamped research reports.",
+  "format": "claude",
+  "subtype": "agent",
   "tags": [
     "meta",
     "performance",
@@ -17,5 +14,9 @@
     "context-management",
     "prompt-engineering",
     "optimization"
+  ],
+  "files": [
+    ".claude/agents/claude-code-optimizer.md",
+    ".claude/commands/plan-claude-code-optimization.md"
   ]
 }
